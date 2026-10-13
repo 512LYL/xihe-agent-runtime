@@ -10,7 +10,7 @@
 ![Tested on](https://img.shields.io/badge/Tested%20on-MetaX%20C500%20%7C%20MACA%203.5.3.20%20%7C%20vLLM%200.17.0-orange)
 
 **许可证**：[木兰宽松许可证第 2 版](LICENSE)（Mulan PSL v2，OSI 认证）
-**主源（GitHub）**：`https://github.com/LYL512/xihe-agent-runtime` ｜ **平台镜像（GitLink）**：待建（见 [docs/08_仓库拓扑与落地形态.md](docs/08_仓库拓扑与落地形态.md)）
+**主源（GitHub）**：`https://github.com/512LYL/xihe-agent-runtime` ｜ **平台镜像（GitLink）**：待建（见 [docs/08_仓库拓扑与落地形态.md](docs/08_仓库拓扑与落地形态.md)）
 **比赛版历史仓库（封存留证）**：[GitLink `LYL512/Xihe-AI-Assistant`](https://www.gitlink.org.cn/LYL512/Xihe-AI-Assistant)
 
 ---
