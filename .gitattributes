@@ -1,0 +1,61 @@
+# ==============================================================================
+# .gitattributes —— 显式声明「大二进制不入库」的仓库策略
+#
+# 与 .gitignore 的分工：
+#   .gitignore   —— 拦住**未跟踪**的大文件，不让它们进门；
+#   .gitattributes —— 对**已入库**的文件声明差异/合并行为，并作为策略声明留痕。
+#
+# ⚠️ 关键认知（写在这里，防止误判）：
+#   「加 .gitignore / .gitattributes」只能**防未来**，对**已进历史的大文件毫无回收作用**。
+#   Git 历史不可变 —— 要真正减体积只有两条路：另起新仓 / 改写历史（filter-repo）。
+#   本项目选「另起新仓 + 白名单入场」，因此本仓的 .git 体积 ≈ 你放进去的东西。
+#
+# 本仓库**不使用 Git LFS**：
+#   瘦身后入库的最大件是 MB 级 PDF/截图，上 LFS 只会增加 clone 门槛
+#   （clone 者必须先装 git-lfs），收益为零。
+# ==============================================================================
+
+# ---------------------------------------------------------------- 文本规范化
+* text=auto eol=lf
+
+*.md      text eol=lf
+*.txt     text eol=lf
+*.py      text eol=lf diff=python
+*.json    text eol=lf
+*.ps1     text eol=lf
+*.bat     text eol=crlf
+*.cmd     text eol=crlf
+*.sh      text eol=lf
+# LICENSE 无扩展名：显式声明，避免不同平台 clone 后出现 CRLF/LF 差异告警
+LICENSE   text eol=lf
+
+# ---------------------------------------------------------------- 二进制（永不尝试 diff / merge）
+# 以下类型**本不应出现**在本仓库；此处声明是为了：
+#   ① 万一误入，Git 不会尝试做文本 diff；
+#   ② 让评审一眼看到「这是一条显式红线」，而不是遗忘的角落。
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.webp    binary
+*.ico     binary
+*.pdf     binary
+*.zip     binary
+*.gz      binary
+*.7z      binary
+*.mp4     binary
+*.mov     binary
+*.pptx    binary
+*.ppt     binary
+*.docx    binary
+*.xlsx    binary
+*.gguf    binary
+*.safetensors binary
+*.bin     binary
+*.pt      binary
+*.onnx    binary
+
+# ---------------------------------------------------------------- 归档快照
+# 历史证据目录按「归档」处理：不参与语言统计，避免污染 GitHub 的语言占比。
+docs/dev-history/**  linguist-documentation
+assets/**            linguist-documentation

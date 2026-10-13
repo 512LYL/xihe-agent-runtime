@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="708" viewBox="0 0 1200 708" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+<rect width="1200" height="708" fill="#ffffff"/>
+<text x="40" y="38" font-size="19" font-weight="700" fill="#1f2937">比赛版（历史版本）提交历史 · 共 12 次提交</text>
+<text x="40" y="60" font-size="12.5" fill="#6b7280">仓库：GitLink LYL512/Xihe-AI-Assistant（已封存保留、可随时回退查看）　｜　本图为 git log 生成的历史卡片（非平台页面截图）</text>
+<text x="40" y="80" font-size="12" fill="#9ca3af">用途：作为「项目已迭代多次」的迭代留证。比赛版与基金版口径分离，互不覆盖、互不合并。</text>
+<line x1="128" y1="102" x2="128" y2="600" stroke="#d1d5db" stroke-width="2"/>
+<circle cx="128" cy="114" r="6" fill="#2f6fb5" stroke="#ffffff" stroke-width="2"/>
+<text x="112" y="118" font-size="11.5" fill="#6b7280" text-anchor="end">2026-09-20</text>
+<text x="150" y="118" font-size="12.5" font-family="Consolas, monospace" fill="#b45309">f3892fe</text>
+<text x="228" y="118" font-size="12.5" fill="#1f2937">feat: 补充多模态网关与自愈看护层源码（密钥/隐私已脱敏）</text>
+<text x="1160" y="118" font-size="11" fill="#9ca3af" text-anchor="end">LYL512</text>
+<circle cx="128" cy="156" r="6" fill="#2f6fb5" stroke="#ffffff" stroke-width="2"/>
+<text x="112" y="160" font-size="11.5" fill="#6b7280" text-anchor="end">2026-09-16</text>
+<text x="150" y="160" font-size="12.5" font-family="Consolas, monospace" fill="#b45309">241bb27</text>
+<text x="228" y="160" font-size="12.5" fill="#1f2937">docs: 重写 README，突出国产算力适配与三通道架构</text>
+<text x="1160" y="160" font-size="11" fill="#9ca3af" text-anchor="end">LYL512</text>
+<circle cx="128" cy="198" r="6" fill="#2f6fb5" stroke="#ffffff" stroke-width="2"/>
+<text x="112" y="202" font-size="11.5" fill="#6b7280" text-anchor="end">2026-09-14</text>
+<text x="150" y="202" font-size="12.5" font-family="Consolas, monospace" fill="#b45309">863ea76</text>
+<text x="228" y="202" font-size="12.5" fill="#1f2937">chore: 忽略微信接收的临时图片（不属提交内容）</text>
+<circle cx="128" cy="240" r="6" fill="#2f6fb5" stroke="#ffffff" stroke-width="2"/>
+<text x="112" y="244" font-size="11.5" fill="#6b7280" text-anchor="end">2026-09-14</text>
+<text x="150" y="244" font-size="12.5" font-family="Consolas, monospace" fill="#b45309">0e861cc</text>
+<text x="228" y="244" font-size="12.5" fill="#1f2937">docs: 统一开源许可证为木兰宽松许可证第2版（Mulan PSL v2）</text>
+<circle cx="128" cy="282" r="6" fill="#2f6fb5" stroke="#ffffff" stroke-width="2"/>
+<text x="112" y="286" font-size="11.5" fill="#6b7280" text-anchor="end">2026-07-09</text>
+<text x="150" y="286" font-size="12.5" font-family="Consolas, monospace" fill="#b45309">3604f4b</text>
+<text x="228" y="286" font-size="12.5" fill="#1f2937">材料补全：演示视频</text>
+<text x="1160" y="286" font-size="11" fill="#9ca3af" text-anchor="end">LYL512</text>
+<circle cx="128" cy="324" r="6" fill="#2f6fb5" stroke="#ffffff" stroke-width="2"/>
+<text x="112" y="328" font-size="11.5" fill="#6b7280" text-anchor="end">2026-07-09</text>
+<text x="150" y="328" font-size="12.5" font-family="Consolas, monospace" fill="#b45309">ce827de</text>
+<text x="228" y="328" font-size="12.5" fill="#1f2937">材料补全：演示视频链接</text>
+<text x="1160" y="328" font-size="11" fill="#9ca3af" text-anchor="end">LYL512</text>
+<circle cx="128" cy="366" r="6" fill="#2f6fb5" stroke="#ffffff" stroke-width="2"/>
+<text x="112" y="370" font-size="11.5" fill="#6b7280" text-anchor="end">2026-07-05</text>
+<text x="150" y="370" font-size="12.5" font-family="Consolas, monospace" fill="#b45309">ef783b8</text>
+<text x="228" y="370" font-size="12.5" fill="#1f2937">材料补全：统一LICENSE、创建8个Issue、新增Issue索引、批量替换智纤云策</text>
+<text x="1160" y="370" font-size="11" fill="#9ca3af" text-anchor="end">LYL512</text>
+<circle cx="128" cy="408" r="6" fill="#2f6fb5" stroke="#ffffff" stroke-width="2"/>
+<text x="112" y="412" font-size="11.5" fill="#6b7280" text-anchor="end">2026-06-28</text>
+<text x="150" y="412" font-size="12.5" font-family="Consolas, monospace" fill="#b45309">5b7c616</text>
+<text x="228" y="412" font-size="12.5" fill="#1f2937">比赛提交更新：文档版本对齐 + 提交清单更新 + 根目录README</text>
+<text x="1160" y="412" font-size="11" fill="#9ca3af" text-anchor="end">LYL512</text>
+<circle cx="128" cy="450" r="6" fill="#2f6fb5" stroke="#ffffff" stroke-width="2"/>
+<text x="112" y="454" font-size="11.5" fill="#6b7280" text-anchor="end">2026-06-28</text>
+<text x="150" y="454" font-size="12.5" font-family="Consolas, monospace" fill="#b45309">f4c6494</text>
+<text x="228" y="454" font-size="12.5" fill="#1f2937">比赛提交最终版：文档版本对齐与修复</text>
+<text x="1160" y="454" font-size="11" fill="#9ca3af" text-anchor="end">LYL512</text>
+<circle cx="128" cy="492" r="6" fill="#2f6fb5" stroke="#ffffff" stroke-width="2"/>
+<text x="112" y="496" font-size="11.5" fill="#6b7280" text-anchor="end">2026-06-27</text>
+<text x="150" y="496" font-size="12.5" font-family="Consolas, monospace" fill="#b45309">3d2c724</text>
+<text x="228" y="496" font-size="12.5" fill="#1f2937">Mgit pull origin master --allow-unrelated-historieserge branch 'master' o…</text>
+<text x="1160" y="496" font-size="11" fill="#9ca3af" text-anchor="end">LYL512</text>
+<circle cx="128" cy="534" r="6" fill="#2f6fb5" stroke="#ffffff" stroke-width="2"/>
+<text x="112" y="538" font-size="11.5" fill="#6b7280" text-anchor="end">2026-06-27</text>
+<text x="150" y="538" font-size="12.5" font-family="Consolas, monospace" fill="#b45309">02e59ef</text>
+<text x="228" y="538" font-size="12.5" fill="#1f2937">比赛提交：曦和AI办公系统 v2026.6.9</text>
+<text x="1160" y="538" font-size="11" fill="#9ca3af" text-anchor="end">LYL512</text>
+<circle cx="128" cy="576" r="6" fill="#2f6fb5" stroke="#ffffff" stroke-width="2"/>
+<text x="112" y="580" font-size="11.5" fill="#6b7280" text-anchor="end">2026-06-27</text>
+<text x="150" y="580" font-size="12.5" font-family="Consolas, monospace" fill="#b45309">52604b3</text>
+<text x="228" y="580" font-size="12.5" fill="#1f2937">Initial commit</text>
+<text x="1160" y="580" font-size="11" fill="#9ca3af" text-anchor="end">LYL512</text>
+<rect x="40" y="634" width="1120" height="58" rx="8" fill="#f9fafb" stroke="#e5e7eb"/>
+<text x="58" y="656" font-size="12.5" fill="#374151">迭代轨迹要点：① 2026-06-27 初始化与比赛提交　② 2026-07-05 统一许可证（木兰 PSL v2）+ 建 8 个 Issue　③ 2026-07-09 补演示视频与链接</text>
+<text x="58" y="676" font-size="12.5" fill="#374151">④ 2026-09-14 许可证口径收敛　⑤ 2026-09-16 重写 README 突出「国产算力适配 + 三通道架构」　⑥ 2026-09-20 补多模态网关与自愈看护层源码（密钥/隐私已脱敏）</text>
+</svg>

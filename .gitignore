@@ -1,0 +1,257 @@
+# ==============================================================================
+# .gitignore —— 「先防体积、再防泄露」的第一道防线
+#
+# 本仓库的背景约束（写在这里，防止后来人删掉规则）：
+#   · 旧仓 702.6 MB 的根因是**大二进制进了历史**（112.87 MB PPT 原件 +
+#     两段原始视频 346 MB / 212 MB + 202.83 MB 旧版 PPT PDF）；
+#   · Git 历史不可变 —— `git rm` 只影响之后的提交，旧 blob **永久留在对象库**，
+#     谁来 clone 都要下 700 MB；唯一解法是「另起新仓 + 白名单入场」。
+#   · GitHub **拒收 > 100 MB 单文件**；本仓库红线更严：**单文件 > 10 MB 即不入库**。
+#   ⇒ 规则宁可多写几行，绝不放过任何大二进制。
+# ==============================================================================
+
+# ---------------------------------------------------------------- 密钥 / 凭据（最高优先）
+# 任何形态的密钥一律不入库；只有 *.example / 占位符可以进。
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+id_ecdsa*
+*_key.txt
+*密钥*
+*私钥*
+*凭证*
+*credential*
+secrets/
+credentials/
+**/secrets/
+mail_qq.env
+
+# ---------------------------------------------------------------- 大二进制护栏
+# 视频
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wmv
+*.flv
+*.webm
+*.m4v
+# PPT / 文档原件（只提交 PDF 或 Release 附件）
+*.pptx
+*.ppt
+*.docx
+*.xlsx
+# 大 PDF（必须入库的单个 PDF 用 ! 显式放行）
+*.pdf
+# 压缩包
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+# 设计稿 / 原始素材
+*.psd
+*.ai
+*.sketch
+*.tif
+*.tiff
+*.bmp
+*.raw
+*素材*/
+*原素材*/
+# 模型权重（一律不入库）
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx
+*.h5
+
+# ---------------------------------------------------------------- 日志 / 运行期产物
+*.log
+*.log.*
+*.gz
+日志/
+logs/
+.runtime/
+runtime/
+diagnostics/
+paused_tasks/
+*.pid
+*.heartbeat
+*.trajectory.jsonl
+
+# ---------------------------------------------------------------- 备份 / 临时
+*.bak
+*.bak_*
+*.bak-*
+*.backup
+*.orig
+*.rej
+*.tmp
+*.temp
+*~
+*_backup/
+_backup/
+*.old
+*.copy
+
+# ---------------------------------------------------------------- 本仓库搭建期工具（不进公开仓）
+# 一次性脱敏/统计脚本与报告：留在本地作凭证，不入库。
+_build/
+
+# ==============================================================================
+# 以下是 Python 官方模板（保留，避免踩常规坑）
+# ==============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.venv
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# ==============================================================================
+# 编辑器 / IDE
+# ==============================================================================
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini

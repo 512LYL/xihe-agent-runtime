@@ -1,0 +1,127 @@
+{
+  // =============================================================
+  // openclaw.template.json —— OpenClaw Gateway 配置模板（三通道形态）
+  //
+  // 用法：复制为 openclaw.json 放入你的 OPENCLAW_STATE_DIR，并设置
+  //   MUXI_API_KEY / MUXI_PACKAGE_ID 环境变量（或改用 .env，见 .env.example）。
+  //
+  // 本模板的形态说明（与「三通道智能路由」对应）：
+  // 1. 无任何外部云端模型 provider —— 只保留 muxi + bridge 两个后端；
+  //    Gateway 永远只调 Bridge，由 Bridge 内部按网络状态与任务复杂度决定
+  //    透传云端还是走本地（这是「算力来源无关」得以成立的关键）。
+  // 2. muxi.baseUrl 指向本机 Bridge（11442）—— 所有请求经 Bridge 路由，
+  //    这样 Bridge 才能在 system prompt 注入"当前模型状态"。
+  // 3. fallbacks 为 [bridge/qwen3.5:4b] —— 保留 fallback 但实际不触发
+  //    （Bridge 始终可达，OpenClaw 永远收到成功响应）。
+  // 4. timeoutSeconds: 600 —— 10 分钟，足够复杂任务。
+  // 5. compaction.contextThreshold=0.40 —— 约 26K token 触发压缩。
+  // 6. workspace 请改成你自己的路径（不要照抄任何人的本机目录）。
+  // =============================================================
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "muxi/Qwen3.5-27B",
+        "fallbacks": ["bridge/qwen3.5:4b"]
+      },
+      "timeoutSeconds": 600,
+      "workspace": "<YOUR_OPENCLAW_WORKSPACE>",
+      "compaction": {
+        "mode": "safeguard",
+        "model": "muxi/Qwen3.5-27B",
+        "reserveTokens": 12000,
+        "reserveTokensFloor": 12000,
+        "keepRecentTokens": 2048,
+        "recentTurnsPreserve": 1,
+        "maxHistoryShare": 0.1,
+        "timeoutSeconds": 600,
+        "notifyUser": true,
+        "truncateAfterCompaction": true,
+        "maxActiveTranscriptBytes": "20mb"
+      },
+      "models": {
+        "muxi/Qwen3.5-27B": {},
+        "bridge/qwen2.5-7b-tools": {},
+        "bridge/qwen3.5:4b": {}
+      }
+    }
+  },
+  "gateway": {
+    "auth": {
+      "mode": "none"
+    },
+    "mode": "local",
+    "port": 18790,
+    "bind": "loopback"
+  },
+  "models": {
+    "providers": {
+      "muxi": {
+        "baseUrl": "http://127.0.0.1:11442/v1",
+        "apiKey": "${MUXI_API_KEY}",
+        "api": "openai-completions",
+        "timeoutSeconds": 600,
+        "headers": {
+          "X-Package": "${MUXI_PACKAGE_ID}"
+        },
+        "models": [
+          {
+            "id": "Qwen3.5-27B",
+            "name": "沐曦 Qwen3.5-27B",
+            "contextWindow": 65536,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "ollama": {
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "apiKey": "ollama",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "qwen2.5-7b-local",
+            "name": "Qwen2.5-7B",
+            "contextWindow": 16384,
+            "maxTokens": 4096
+          }
+        ]
+      },
+      "bridge": {
+        "baseUrl": "http://127.0.0.1:11442/v1",
+        "apiKey": "none",
+        "api": "openai-completions",
+        "request": {
+          "allowPrivateNetwork": true
+        },
+        "models": [
+          {
+            "id": "qwen3.5:4b",
+            "name": "Qwen3.5-4B",
+            "contextWindow": 65536,
+            "maxTokens": 4096
+          }
+        ]
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "ollama": {
+        "enabled": true
+      },
+      "lossless-claw": {
+        "enabled": true,
+        "llm": {
+          "allowModelOverride": true,
+          "allowedModels": ["muxi/Qwen3.5-27B"]
+        },
+        "config": {
+          "summaryModel": "muxi/Qwen3.5-27B",
+          "contextThreshold": 0.40
+        }
+      }
+    },
+    "slots": {
+      "contextEngine": "lossless-claw"
+    }
+  }
+}
