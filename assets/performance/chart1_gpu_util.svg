@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" font-family="Microsoft YaHei, SimHei, Noto Sans CJK SC, Source Han Sans SC, sans-serif">
 <rect width="1200" height="520" fill="#ffffff"/>
-<text x="78" y="30" font-size="19" font-weight="700" fill="#1f2937">通道③ GPU 利用率 · 稳态压测整窗曲线（16 并发 / 持续供料 83.4 分钟）</text>
+<text x="78" y="30" font-size="19" font-weight="700" fill="#1f2937">通道③ GPU 利用率 · 稳态压测窗曲线（16 并发 / 持续供料 83.4 分钟）</text>
 <text x="78" y="48" font-size="12.5" fill="#6b7280">MetaX C500 32G 切片 · MACA 3.5.3.20 · vLLM 0.17.0 · Qwen2.5-32B-AWQ ｜ 数据源：云端监控 2 秒分辨率 CSV，共 3298 采样点（通道③）</text>
 <rect x="78" y="58" width="1004" height="320" fill="none" stroke="#8b95a5" stroke-width="1"/>
 <line x1="78" y1="378.0" x2="1082" y2="378.0" stroke="#e3e7ee" stroke-width="1"/>
@@ -39,7 +39,7 @@
 <rect x="78" y="436.0" width="15" height="4" rx="2" fill="#2f6fb5"/>
 <text x="100" y="440.0" font-size="12" fill="#374151">GPU util（每 2 秒一个采样点）</text>
 <rect x="580" y="436.0" width="15" height="4" rx="2" fill="#b91c1c"/>
-<text x="602" y="440.0" font-size="12" fill="#374151">压测窗（有负载）整窗均值 = 80.5%</text>
+<text x="602" y="440.0" font-size="12" fill="#374151">压测窗（有负载）均值 = 80.5%</text>
 <rect x="78" y="455.0" width="15" height="4" rx="2" fill="#d97706"/>
 <text x="100" y="459.0" font-size="12" fill="#374151">达标线 70%（≥70% 的采样点占 95.1%）</text>
 <text x="78" y="480.0" font-size="11" fill="#9ca3af">整采样窗（含收工空转）均值 61.1% ｜ 有负载均值 82.2% ｜ 峰值 96% ｜ 对照：调度改造前整窗 26.8%（≈3×）</text>

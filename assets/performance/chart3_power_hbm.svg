@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" font-family="Microsoft YaHei, SimHei, Noto Sans CJK SC, Source Han Sans SC, sans-serif">
 <rect width="1200" height="520" fill="#ffffff"/>
 <text x="78" y="30" font-size="19" font-weight="700" fill="#1f2937">通道③ 功耗与 HBM 带宽（同一压测窗）</text>
 <text x="78" y="48" font-size="12.5" fill="#6b7280">左轴：GPU 功耗 W（满配 350 W；均 248 / 峰 338）｜右轴：HBM 带宽 GB/s（有负载均 589 / 峰 861）</text>

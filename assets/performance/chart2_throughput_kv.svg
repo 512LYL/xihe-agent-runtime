@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" font-family="Microsoft YaHei, SimHei, Noto Sans CJK SC, Source Han Sans SC, sans-serif">
 <rect width="1200" height="520" fill="#ffffff"/>
 <text x="78" y="30" font-size="19" font-weight="700" fill="#1f2937">通道③ 生成吞吐与 KV cache 占用（同一压测窗）</text>
 <text x="78" y="48" font-size="12.5" fill="#6b7280">左轴：生成吞吐 tok/s（有负载均 65.5 / 峰 314.7）｜右轴：KV cache 占用率 %（均 82.5 / 峰 100，容量 34,544 tokens）</text>
