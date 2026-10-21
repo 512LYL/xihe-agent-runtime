@@ -1,0 +1,10 @@
+# xihe-lite 依赖
+#
+# 只有「真机打印」才需要这些包；纯离线演练（dry-run）一行都不用装，
+# 控制台、状态机、前置自检、自检脚本全部只依赖 Python 标准库。
+#
+#   pip install -r requirements.txt
+#
+pywin32>=306; sys_platform == "win32"
+pillow>=10.0
+pypdfium2>=4.20

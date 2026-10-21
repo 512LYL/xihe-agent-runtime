@@ -191,7 +191,16 @@ python src\health\watchdog.py                 # 常驻（默认 120s 轮询）
 python src\health\gateway_unstick.py --once --json   # 会话级自愈扫描（默认只报告）
 ```
 
-### 4.5 公开前 / 推送前自检
+### 4.5 精简可运行版（examples/xihe-lite）
+
+若只想先跑通「能看懂 + 能复现」的最小闭环，见 [`examples/xihe-lite/`](examples/xihe-lite/README_Lite.md)：
+
+- 只依赖 **Python 标准库**，`start.bat` 双击即起（控制台 `http://127.0.0.1:18910/`）；
+- 三大模块：控制台（启停/状态看板）、四级路由骨架（云端 API → 本地兜底 → 异地算力 → 离线规则）、打印调度守护；
+- 默认 **模拟模式**，不接触任何真实打印设备，状态机/归档/回执可完整演示；
+- 这是本仓库的**功能子集**，完整能力（多模型路由、C500 自部署 32B、QQ 机器人接入、自愈看护层等）见上文各章。
+
+### 4.6 公开前 / 推送前自检
 
 ```powershell
 python scripts\scan_secrets.py          # 敏感信息 + 大文件全量扫描（红线闸门）
