@@ -258,3 +258,5 @@ cython_debug/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+!assets/video/*.mp4

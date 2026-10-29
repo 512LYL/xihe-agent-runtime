@@ -9,6 +9,42 @@
 
 ---
 
+## [0.3.76] - 2026-10-25
+
+### 变更 · 开源底座剥离
+
+- **新增精简可运行版 [`examples/xihe-lite/`](examples/xihe-lite/)**：把「**极简控制台 + 智能路由骨架 + 打印调度守护**」
+  三块底层骨架从生产版业务中剥出来，作为去业务化的最小可运行闭环；私有业务组件
+  （音乐 / 壁纸 / 桌宠 / 真实 QQ 桥接 / 私有智能体编排）与依赖特定硬件的通道**刻意不入库**，
+  口径见 [examples/xihe-lite/README_Lite.md](examples/xihe-lite/README_Lite.md) §一。
+- **四级路由骨架独立成模块**：`examples/xihe-lite/xihe/router.py` 只保留
+  `tier1 cloud_api → tier2 local_llm → tier3 remote_compute → tier4 offline_rule`
+  降级链与 `[ROUTE]` 流转日志，不连任何大模型；每次路由写 `runtime/logs/router.log`。
+- **控制台与打印解耦**：控制台不直接打印，只做「入 `ready` 暂存队列 / 读状态快照 / 发取消信号」，
+  真正的打印由独立守护进程串行执行（模块说明见 `examples/xihe-lite/xihe/console/dispatch.py`）。
+- **默认安全口径**：`printer.backend` 默认 `mock`（不向任何真实打印设备提交内容），
+  未配置云端 Key 时按降级链走本地兜底且不发网络请求；真实配置由 `.gitignore` 排除。
+- **脱敏自检工具入库**：`examples/xihe-lite/tools/privacy_scan.py`，零绝对路径 / 零真实 IP /
+  零凭据 / 零内部代号。
+
+### 变更 · 多智能体调度重构
+
+- **调度口径收敛为「主节点 + 备份节点」**：以 **DSH 主节点**承担日常调度与长任务，
+  **龙虾（OpenClaw）备份节点**做协同容灾，两节点共享同一套应龙桥接器与通道配置；
+  对外表述见 [README](README.md) §2.3。
+- **看护层「死法 → 负责者」映射收敛**：会话写锁卡死 → `src/health/gateway_unstick.py`；
+  QQ 掉线 / 被踢 → `src/health/watchdog.py`；看护自身 → **OS 级原子单例守卫**（防双实例）；
+  网关进程 → 守护链端口探活；C500 实例失联 / 隧道漂移 → 通道③ 探活 + 报警。
+- **桥接层继续承载三通道智能路由与断网续传**（`src/bridge/yinglo_bridge.py`）：
+  复杂任务先暂停并保存现场（`/v1/paused-tasks`），再由后台线程周期探测网络后断点续传。
+
+### 已知边界（照实登记）
+
+- 「**主节点不可用 → 备份节点接管会话入口**」这一整链路切换目前仍是**设计口径**，
+  尚未做端到端故障演练，不作为已验证能力主张（同 [README](README.md) §2.3 口径说明）。
+
+---
+
 ## [Unreleased]
 
 ### 变更（2026-10-19 · 提交前收口）
